@@ -18,7 +18,7 @@
 <div class="hero"><div class="wrap">
 <div class="copy">
   <h1>Equipment-to-vehicle integration, <span>done right.</span></h1>
-  <p>NESI connects cranes and other body equipment to the truck chassis so they work together: engine speed control, remote start/stop, engine data and clear in-cab warnings. Built for upfitters and body builders, with documentation your installers can actually use.</p>
+  <p>NESI connects cranes and other body equipment to the truck chassis so they work together: engine speed control, PTO control, remote start/stop, J1939 messaging and clear in-cab warnings. Built for upfitters and body builders, with documentation your installers can actually use.</p>
   <a class="btn" href="#quote">Request a quote</a>
 </div>
 <img class="mark" src="logo.png" alt="">
@@ -28,9 +28,9 @@
   <h2>What we do</h2>
   <p class="lead">Chassis and equipment manufacturers each have their own interface. We translate between them so your build goes together cleanly and works the way the operator expects.</p>
   <div class="grid">
-    <div class="card"><h3>Variable engine speed control</h3><p>Set and hold engine speed from the equipment controls, within the chassis manufacturer's limits.</p></div>
+    <div class="card"><h3>Engine speed &amp; PTO control</h3><p>Set and hold engine speed in PTO mode from the equipment controls, within the chassis manufacturer's limits, and monitor PTO state.</p></div>
     <div class="card"><h3>Remote start / stop</h3><p>Start and stop the engine from the crane or remote, with the interlocks the chassis requires.</p></div>
-    <div class="card"><h3>Engine data readout</h3><p>Bring engine information from the vehicle network to the operator's display.</p></div>
+    <div class="card"><h3>J1939 data &amp; messaging</h3><p>Bring engine and vehicle information from the J1939 network to the operator's display, and send the messages your equipment needs.</p></div>
     <div class="card"><h3>In-cab indicators &amp; warnings</h3><p>Custom lights and alerts for equipment status, so the driver always knows what the body is doing.</p></div>
     <div class="card"><h3>One-off harnesses</h3><p>Custom wiring harnesses built for your chassis and equipment combination, or supplied through a harness partner.</p></div>
     <div class="card"><h3>Documentation</h3><p>Clear wiring diagrams and install and setup instructions delivered with every integration.</p></div>
@@ -39,10 +39,23 @@
 
 <section id="who" class="alt"><div class="wrap">
   <h2>Who it's for</h2>
-  <p class="lead">Upfitters, truck body builders and equipment dealers who mount cranes and other bodies on trucks, especially when the crane brand and chassis brand weren't designed to work together, or when a chassis change breaks what you used to install.</p>
+  <p class="lead">Upfitters, truck body builders and equipment dealers who mount cranes and other bodies on trucks.</p>
+  <div class="grid">
+    <div class="card"><h3>The problem</h3><p>Chassis makers offer options to make electrical integration easier, on production units and custom modifications alike, but many builders never use them. Instead, wires get run by hand behind the dash for engine start/stop, PTO controls, engine speed, lighting and warning signals, and efficiency is lost on every build.</p></div>
+    <div class="card"><h3>Generic instructions</h3><p>The equipment manufacturer shipping you a crane or body doesn't know which truck you'll mount it on, and that shows in the generic wiring instructions you get. We create a clean solution specific to your truck and equipment.</p></div>
+  </div>
 </div></section>
 
-<section id="how"><div class="wrap">
+<section id="work"><div class="wrap">
+  <h2>Ways to work with us</h2>
+  <p class="lead">Choose the level of help that fits your shop.</p>
+  <div class="grid">
+    <div class="card"><h3>Full integration</h3><p>We manage the whole process: installation instructions, on-site support, supplying harnesses, and managing design changes.</p></div>
+    <div class="card"><h3>Consulting</h3><p>We help you with optioning out trucks, which devices to use, and other ways to reach your goals, while your team handles the build.</p></div>
+  </div>
+</div></section>
+
+<section id="how" class="alt"><div class="wrap">
   <h2>How it works</h2>
   <p class="lead">Simple and quote-based, so you pay for what your build needs.</p>
   <div class="steps">
@@ -53,14 +66,16 @@
   </div>
 </div></section>
 
-<section id="about" class="alt"><div class="wrap">
+<section id="about"><div class="wrap">
   <h2>About NESI</h2>
-  <p class="lead">NESI (Nulton Equipment Systems Integration) is based in Pennsylvania and focuses on one job: making equipment and vehicles work together reliably. <!-- TODO: add a short personal bio / background here. --></p>
+  <p class="lead">NESI (Nulton Equipment Systems Integration) is a Pennsylvania company focused on making equipment and vehicles work together reliably.</p>
+  <p class="lead" style="margin-top:-12px">Our background is in the boom truck industry, mounting heavy-duty cranes on Class 6-8 trucks. That work means controlling remote engine start/stop, engine speed in PTO mode, PTO state monitoring and J1939 messaging. Founder Cameron Nulton has 5 years of experience in body and equipment electrical integration on commercial vehicles, and with our partner we bring about 10 years of combined experience in integration and custom solutions.</p>
+  <p class="lead" style="margin-top:-12px">We work wherever you are. We start by getting familiar with your facility, the products you build, and how your processes work today. From there we decide together how closely we need to work on each project.</p>
 </div></section>
 
 <section id="quote"><div class="wrap">
   <h2>Request a quote</h2>
-  <p class="lead">Tell us about the build. The more detail the better, but a rough idea is fine.</p>
+  <p class="lead">Tell us about the build. The more detail the better, but a rough idea is fine. You can also email us directly at <a href="mailto:cameron.nulton@nesiintegration.com">cameron.nulton@nesiintegration.com</a>.</p>
   <form id="quote-form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
     <input type="hidden" name="_subject" value="NESI quote request">
     <p class="hp" aria-hidden="true"><label>Leave blank <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
@@ -95,7 +110,7 @@
 
 <footer><div class="wrap">
   <span>&copy; <span id="y">2026</span> NESI &middot; Nulton Equipment Systems Integration</span>
-  <span><a href="mailto:EMAIL@nesiintegration.com">EMAIL@nesiintegration.com</a> <!-- TODO: replace with real email / phone --></span>
+  <span><a href="mailto:cameron.nulton@nesiintegration.com">cameron.nulton@nesiintegration.com</a></span>
 </div></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
