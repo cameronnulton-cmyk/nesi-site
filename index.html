@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NESI | Equipment-to-Vehicle Integration for Upfitters</title>
+<meta name="description" content="NESI integrates cranes and body equipment with the truck chassis: engine speed control, remote start/stop, engine data readout and in-cab indicators, for upfitters and body builders.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="#top"><img src="logo.svg" alt=""><span>NESI</span></a>
+  <nav><a href="#what">What we do</a><a href="#how">How it works</a><a href="#about">About</a><a class="btn" href="#quote" style="margin-left:20px;padding:8px 16px">Request a quote</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <h1>Equipment-to-vehicle integration, done right.</h1>
+  <p>NESI connects cranes and other body equipment to the truck chassis so they work together: engine speed control, remote start/stop, engine data and clear in-cab warnings. Built for upfitters and body builders, with documentation your installers can actually use.</p>
+  <a class="btn" href="#quote">Request a quote</a>
+</div></div>
+
+<section id="what"><div class="wrap">
+  <h2>What we do</h2>
+  <p class="lead">Chassis and equipment manufacturers each have their own interface. We translate between them so your build goes together cleanly and works the way the operator expects.</p>
+  <div class="grid">
+    <div class="card"><h3>Variable engine speed control</h3><p>Set and hold engine speed from the equipment controls, within the chassis manufacturer's limits.</p></div>
+    <div class="card"><h3>Remote start / stop</h3><p>Start and stop the engine from the crane or remote, with the interlocks the chassis requires.</p></div>
+    <div class="card"><h3>Engine data readout</h3><p>Bring engine information from the vehicle network to the operator's display.</p></div>
+    <div class="card"><h3>In-cab indicators &amp; warnings</h3><p>Custom lights and alerts for equipment status, so the driver always knows what the body is doing.</p></div>
+    <div class="card"><h3>One-off harnesses</h3><p>Custom wiring harnesses built for your chassis and equipment combination, or supplied through a harness partner.</p></div>
+    <div class="card"><h3>Documentation</h3><p>Clear wiring diagrams and install and setup instructions delivered with every integration.</p></div>
+  </div>
+</div></section>
+
+<section id="who" class="alt"><div class="wrap">
+  <h2>Who it's for</h2>
+  <p class="lead">Upfitters, truck body builders and equipment dealers who mount cranes and other bodies on trucks, especially when the crane brand and chassis brand weren't designed to work together, or when a chassis change breaks what you used to install.</p>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2>How it works</h2>
+  <p class="lead">Simple and quote-based, so you pay for what your build needs.</p>
+  <div class="steps">
+    <div class="step"><h3>Tell us the build</h3><p>Send the chassis, the equipment and the functions you need.</p></div>
+    <div class="step"><h3>Get a quote</h3><p>We confirm scope and send a clear price and timeline.</p></div>
+    <div class="step"><h3>Integration delivered</h3><p>Hardware, harness and setup built for your combination.</p></div>
+    <div class="step"><h3>Install with confidence</h3><p>Documentation and support so your team installs it right.</p></div>
+  </div>
+</div></section>
+
+<section id="about" class="alt"><div class="wrap">
+  <h2>About NESI</h2>
+  <p class="lead">NESI (Nulton Equipment Systems Integration) is based in Pennsylvania and focuses on one job: making equipment and vehicles work together reliably. <!-- TODO: add a short personal bio / background here. --></p>
+</div></section>
+
+<section id="quote"><div class="wrap">
+  <h2>Request a quote</h2>
+  <p class="lead">Tell us about the build. The more detail the better, but a rough idea is fine.</p>
+  <form id="quote-form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+    <input type="hidden" name="_subject" value="NESI quote request">
+    <p class="hp" aria-hidden="true"><label>Leave blank <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+    <div class="row">
+      <div><label for="name">Your name</label><input id="name" name="name" type="text" required></div>
+      <div><label for="company">Company</label><input id="company" name="company" type="text"></div>
+    </div>
+    <div class="row">
+      <div><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+      <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel"></div>
+    </div>
+    <div class="row">
+      <div><label for="chassis">Chassis (make, model, year)</label><input id="chassis" name="chassis" type="text"></div>
+      <div><label for="equipment">Crane / equipment (brand, model)</label><input id="equipment" name="equipment" type="text"></div>
+    </div>
+    <fieldset><legend>What do you need?</legend>
+      <div class="checks">
+        <label><input type="checkbox" name="functions" value="Variable engine speed"> Variable engine speed</label>
+        <label><input type="checkbox" name="functions" value="Remote start/stop"> Remote start / stop</label>
+        <label><input type="checkbox" name="functions" value="Engine data readout"> Engine data readout</label>
+        <label><input type="checkbox" name="functions" value="In-cab indicators"> In-cab indicators / warnings</label>
+        <label><input type="checkbox" name="functions" value="Custom harness"> Custom harness</label>
+        <label><input type="checkbox" name="functions" value="Not sure"> Not sure yet</label>
+      </div>
+    </fieldset>
+    <div><label for="details">Details</label><textarea id="details" name="details" rows="5"></textarea></div>
+    <div><button class="btn" type="submit">Send request</button></div>
+    <p id="form-msg" role="status" style="margin:0;color:var(--accent)"></p>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>&copy; <span id="y">2026</span> NESI &middot; Nulton Equipment Systems Integration</span>
+  <span><a href="mailto:EMAIL@nesiintegration.com">EMAIL@nesiintegration.com</a> <!-- TODO: replace with real email / phone --></span>
+</div></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+var f=document.getElementById('quote-form'),m=document.getElementById('form-msg');
+f.addEventListener('submit',function(e){
+  e.preventDefault();m.style.color='var(--mute)';m.textContent='Sending...';
+  fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
+  .then(function(r){if(r.ok){f.reset();m.style.color='var(--accent)';m.textContent='Thanks, request received. We will get back to you soon.';}
+  else{throw 0}})
+  .catch(function(){m.style.color='#f87171';m.textContent='Something went wrong. Please email us directly at the address below.';});
+});
+</script>
+</body>
+</html>
