@@ -25,7 +25,7 @@ a{color:var(--accent)}
 header{position:sticky;top:0;background:var(--hdr);border-bottom:4px solid var(--accent);z-index:10}
 header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:68px}
 .brand{display:flex;align-items:center;text-decoration:none}
-.brand img{height:52px;display:block}
+.brand img{height:54px;width:auto;display:block}
 nav{display:flex;align-items:center;gap:22px}
 nav a{color:var(--nav);text-decoration:none;font-size:.95rem;font-weight:600}
 nav a:hover,nav a.on{color:var(--nav-accent)}
@@ -58,7 +58,7 @@ section.alt .card{background:var(--card-alt)}
 .soon p{color:var(--mute);max-width:46ch;margin:16px auto 24px}
 form{display:grid;gap:16px;max-width:720px}
 .row{display:grid;gap:16px;grid-template-columns:1fr 1fr}
-@media(max-width:700px){.row{grid-template-columns:1fr}nav a:not(.btn){display:none}.brand img{height:38px}}
+@media(max-width:700px){.row{grid-template-columns:1fr}nav a:not(.btn){display:none}.brand img{height:36px}}
 label{display:block;font-size:.9rem;color:var(--mute);margin-bottom:4px}
 input[type=text],input[type=email],input[type=tel],textarea{width:100%;padding:11px 12px;border-radius:4px;border:1px solid var(--line);background:var(--input);color:var(--ink);font:inherit}
 input:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
@@ -73,5 +73,6 @@ footer a{color:var(--nav-accent)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 .hero .wrap{display:flex;align-items:center;gap:48px}
 .hero .copy{flex:1}
-.hero .mark{width:340px;max-width:38%;border-radius:4px;box-shadow:0 10px 40px var(--shadow)}
+.hero .mark{display:block;width:400px;max-width:42%}
+.hero .mark img{display:block;width:100%;height:auto}
 @media(max-width:800px){.hero .mark{display:none}}
