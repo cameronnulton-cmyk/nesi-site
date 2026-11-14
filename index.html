@@ -1,10 +1,18 @@
 <!DOCTYPE html>
+<!--
+  NESI home page. Plain HTML/CSS, no build step. See README.md for hosting,
+  DNS, and how the consultation form delivers email.
+  Page order: header > hero > What we do > Who it's for > Ways to work > How it
+  works > About > Request a consultation (form) > footer.
+-->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NESI | Equipment-to-Vehicle Integration for Upfitters</title>
 <meta name="description" content="NESI integrates cranes and body equipment with the truck chassis: engine speed control, remote start/stop, engine data readout and in-cab indicators, for upfitters and body builders.">
+<!-- Tab icons. The ?v=2 suffix forces browsers to drop a cached old icon;
+     bump it (v=3, ...) whenever the icon files change. -->
 <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
 <link rel="icon" href="favicon.ico?v=2" sizes="any">
 <link rel="icon" href="favicon.png?v=2" type="image/png" sizes="64x64">
@@ -12,12 +20,15 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- Site header: logo + navigation. Same markup on products.html. -->
 <header><div class="wrap">
   <a class="brand" href="index.html"><img src="logo-compact-dark.svg" alt="NESI"></a>
   <nav><a href="index.html#what">What we do</a><a href="products.html">Products</a><a href="index.html#how">How it works</a><a href="index.html#about">About</a><a class="btn" href="index.html#consult">Request a consultation</a></nav>
 </div></header>
 
 <main id="top">
+<!-- Hero: headline, intro, button. The logo swaps for a light-on-dark version
+     in dark mode using <picture>. -->
 <div class="hero"><div class="wrap">
 <div class="copy">
   <h1>Integration that fits <span>how you build.</span></h1>
@@ -27,6 +38,8 @@
 <picture class="mark"><source media="(prefers-color-scheme: dark)" srcset="logo-full-dark.svg"><img src="logo-full-light.svg" alt="NESI, Nulton Equipment Systems Integration"></picture>
 </div></div>
 
+<!-- What we do: service cards. Edit text inside each .card; add or remove
+     cards freely, the grid reflows by itself. -->
 <section id="what"><div class="wrap">
   <h2>What we do</h2>
   <p class="lead">Chassis and equipment manufacturers each have their own interface. We translate between them so your build goes together cleanly and works the way the operator expects. We do custom integration for lighting, signals and other features on one-off projects, and we also focus on improving production efficiency for the bread-and-butter builds your company runs every day.</p>
@@ -40,6 +53,7 @@
   </div>
 </div></section>
 
+<!-- Who it's for: the problem we solve -->
 <section id="who" class="alt"><div class="wrap">
   <h2>Who it's for</h2>
   <p class="lead">Upfitters, truck body builders and equipment dealers who mount cranes and other bodies on trucks.</p>
@@ -50,6 +64,7 @@
   </div>
 </div></section>
 
+<!-- Ways to work with us -->
 <section id="work"><div class="wrap">
   <h2>Ways to work with us</h2>
   <p class="lead">Choose the level of help that fits your shop.</p>
@@ -59,6 +74,7 @@
   </div>
 </div></section>
 
+<!-- How it works: steps are numbered automatically by CSS -->
 <section id="how" class="alt"><div class="wrap">
   <h2>How it works</h2>
   <p class="lead">We start with a conversation about your business.</p>
@@ -70,6 +86,7 @@
   </div>
 </div></section>
 
+<!-- About -->
 <section id="about"><div class="wrap">
   <h2>About NESI</h2>
   <p class="lead">NESI (Nulton Equipment Systems Integration) is a Pennsylvania company focused on making equipment and vehicles work together reliably.</p>
@@ -77,10 +94,17 @@
   <p class="lead" style="margin-top:-12px">We work wherever you are. We start by getting familiar with your facility, the products you build, and how your processes work today. From there we decide together how closely we need to work on each project.</p>
 </div></section>
 
+<!-- Consultation request form.
+     Submissions go to a Google Apps Script web app (see apps-script/Code.gs and
+     README.md), which emails them to the owner. The form action URL below is the
+     script's deployment URL; it changes if the script is redeployed as a NEW
+     deployment, and must be updated here when that happens. -->
 <section id="consult"><div class="wrap">
   <h2>Request a phone consultation</h2>
   <p class="lead">Leave your information and we'll be in touch to set up a call to discuss your needs. You can also email us directly at <a href="mailto:sales@nesiintegration.com">sales@nesiintegration.com</a>.</p>
   <form id="consult-form" method="POST" action="https://script.google.com/macros/s/AKfycbyr58Li2HH2JlCyaUwJe6knMhMjsI-Po2ns_gq2a8ZhJvhEc3hi76paQoBpvxB0a2ce/exec">
+    <!-- Hidden spam trap: real visitors never see or fill this; the script ignores
+         submissions where it has a value. Keep name="_gotcha". -->
     <p class="hp" aria-hidden="true"><label>Leave blank <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
     <div class="row">
       <div><label for="name">Your name</label><input id="name" name="name" type="text" required></div>
@@ -102,7 +126,11 @@
   <span><a href="mailto:sales@nesiintegration.com">sales@nesiintegration.com</a></span>
 </div></footer>
 <script>
+// Footer year updates itself.
 document.getElementById('y').textContent=new Date().getFullYear();
+// Form submit: send the fields to the Apps Script without leaving the page.
+// mode:'no-cors' means the browser can't read the script's reply, so success is
+// assumed once the request is sent; only a network failure shows the error text.
 var f=document.getElementById('consult-form'),m=document.getElementById('form-msg');
 f.addEventListener('submit',function(e){
   e.preventDefault();m.style.color='var(--mute)';m.textContent='Sending...';
