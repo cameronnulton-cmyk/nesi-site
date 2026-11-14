@@ -135,7 +135,7 @@ var f=document.getElementById('consult-form'),m=document.getElementById('form-ms
 f.addEventListener('submit',function(e){
   e.preventDefault();m.style.color='var(--mute)';m.textContent='Sending...';
   fetch(f.action,{method:'POST',mode:'no-cors',body:new URLSearchParams(new FormData(f))})
-  .then(function(){f.reset();m.style.color='var(--accent)';m.textContent='Thanks, we received your request. We'll be in touch soon to set up a call.';})
+  .then(function(){f.reset();m.style.color='var(--accent)';m.textContent="Thanks, we received your request. We'll be in touch soon to set up a call.";})
   .catch(function(){m.style.color='var(--err)';m.textContent='Something went wrong. Please email us directly at sales@nesiintegration.com.';});
 });
 </script>
